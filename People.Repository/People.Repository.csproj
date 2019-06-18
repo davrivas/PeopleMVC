@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D077B8CC-81A4-4529-83DA-D893674B6022}</ProjectGuid>
+    <ProjectGuid>{5D047305-7260-4CA9-883D-11854E2DF47F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>People.Model</RootNamespace>
-    <AssemblyName>People.Model</AssemblyName>
+    <RootNamespace>People.Repository</RootNamespace>
+    <AssemblyName>People.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,12 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\Person.cs" />
-    <Compile Include="Enums\EducationLevel.cs" />
-    <Compile Include="Enums\MaritalStatus.cs" />
-    <Compile Include="Enums\Sex.cs" />
-    <Compile Include="Enums\WorkingStatus.cs" />
+    <Compile Include="BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

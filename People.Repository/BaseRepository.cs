@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace People.Model.Enums
+namespace People.Repository
 {
-    public enum SexEnum
+    public interface IBaseRepository
     {
-        Female = 1,
-        Male
+
+    }
+
+    public class BaseRepository : IBaseRepository
+    {
     }
 }

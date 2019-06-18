@@ -1,6 +1,6 @@
 ﻿namespace People.Model.Enums
 {
-    public enum EducationLevelEnum
+    public enum EducationLevel
     {
         Elementary = 1,
         HighSchool,
