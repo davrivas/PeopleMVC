@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace People.Repository
 {
-    public interface IBaseRepository<T>
+    public interface IPersonRepository : IBaseRepository<IPerson>
     {
     }
 
-    public abstract class BaseRepository<T> : IBaseRepository<T> where T : IBaseEntity
+    public class PersonRepository : BaseRepository<IPerson>, IPersonRepository
     {
     }
 }
