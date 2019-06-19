@@ -2,11 +2,11 @@
 
 namespace People.Repository
 {
-    public interface IPersonRepository : IBaseRepository<Person>
+    public interface IPersonRepository<T> : IBaseRepository<T> where T : IPerson
     {
     }
 
-    public class PersonRepository : BaseRepository<Person>, IPersonRepository
+    public class PersonRepository : BaseRepository<Person>, IPersonRepository<Person>
     {
     }
 }

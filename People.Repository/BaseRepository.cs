@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace People.Repository
 {
-    public interface IBaseRepository<T>
+    public interface IBaseRepository<T> where T : IBaseEntity
     {
         bool Create(T entity);
         bool Delete(T entity);
@@ -16,7 +16,7 @@ namespace People.Repository
 
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, IBaseEntity
     {
-        protected readonly PeopleContext Context;
+        private readonly PeopleContext Context;
 
         public BaseRepository()
         {
@@ -25,12 +25,34 @@ namespace People.Repository
 
         public virtual bool Create(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Context.Set<T>().Add(entity);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return false;
+            }
+
         }
 
         public virtual bool Delete(T entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Context.Set<T>().Remove(entity);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return false;
+            }
+
         }
 
         public virtual T Get(int id)
@@ -61,7 +83,18 @@ namespace People.Repository
 
         public bool Update(T oldEntity, T newEntity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Context.Entry(oldEntity).CurrentValues.SetValues(newEntity);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return false;
+            }
+
         }
     }
 }
