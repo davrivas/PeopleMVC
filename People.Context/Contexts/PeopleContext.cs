@@ -1,24 +1,14 @@
 ﻿using People.Model.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace People.Context.Contexts
 {
     public sealed class PeopleContext : DbContext
     {
-        public PeopleContext() : base("")
+        public PeopleContext() : base("Data Source=DESKTOP-3Q3B28H;Initial Catalog=People;Integrated Security=True")
         {
         }
 
         public IDbSet<Person> People { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }
