@@ -1,5 +1,6 @@
 ﻿using People.Model.Enums;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace People.Model.Entities
 {
@@ -14,7 +15,8 @@ namespace People.Model.Entities
         WorkingStatus WorkingStatus { get; set; }
     }
 
-    public class Person : BaseEntity, IPerson
+    [Table("People")]
+    public sealed class Person : BaseEntity, IPerson
     {
         public string Name { get; set; }
         public string LastName { get; set; }

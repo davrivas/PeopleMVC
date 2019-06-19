@@ -8,10 +8,9 @@ namespace People.Repository
 {
     public interface IBaseRepository
     {
-
     }
 
-    public class BaseRepository : IBaseRepository
+    public abstract class BaseRepository : IBaseRepository
     {
     }
 }
